@@ -2,6 +2,10 @@
 
 This was put together for a quick hands on example for getting into some React and front end basics.
 
+| Overview                      |
+| :---------------------------- |
+| 1. [Intro](/docs/01-intro.md) |
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
