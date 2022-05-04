@@ -8,7 +8,7 @@ type NavbarProps = {
 };
 
 const NavBar: React.FC<NavbarProps> = ({ loggedIn, displayName }) => {
-  return <div>{!loggedIn && <Link to={LOGIN_ROUTE}>Login</Link>}</div>;
+  return <div>{!loggedIn && <Link to={`/${LOGIN_ROUTE}`}>Login</Link>}</div>;
 };
 
 export { NavBar };
