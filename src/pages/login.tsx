@@ -1,11 +1,18 @@
+import axios from "axios";
 import React, { useState } from 'react';
 import {Button} from "../components/general/button";
-import axios from "axios";
+import {setCreds} from "../store/auth";
+import {useDispatch} from "react-redux";
+import {DASHBOARD_ROUTE} from "../constants/routes";
+import {useNavigate} from "react-router-dom";
 
 const Login: React.FC<{}> = () => {
-    const [username, setUsername] = useState<string | null>(null)
-    const [password, setPassword] = useState<string | null>(null)
-    const [isLoading, setIsLoading] = useState<boolean>(false)
+    const [username, setUsername] = useState<string | null>(null);
+    const [password, setPassword] = useState<string | null>(null);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     const onLogin = async () => {
         console.log(username, password);
         setIsLoading(true);
@@ -19,7 +26,8 @@ const Login: React.FC<{}> = () => {
             }
         );
         setIsLoading(false);
-        console.log(result);
+        dispatch(setCreds(result.data));
+        navigate(`/${DASHBOARD_ROUTE}`);
     };
 
     // Option 2 change the layout if the page is loading
