@@ -2,7 +2,7 @@ import * as React from 'react';
 
 type ButtonProps = {
   children: string | React.ReactNode;
-  onClick: () => {};
+  onClick: () => void;
 };
 
 // This is an example of a simple or atomic component. It's sole responsibility

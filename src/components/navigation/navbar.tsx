@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { LOGIN_ROUTE } from '../../constants/routes';
+import {DASHBOARD_ROUTE, LOGIN_ROUTE} from '../../constants/routes';
 import {
   PRIMARY_BRAND_COLOR,
   PRIMARY_BRAND_TEXT_COLOR,
@@ -30,7 +30,8 @@ const NavBar: React.FC<NavbarProps> = ({ loggedIn, displayName }) => {
   return (
     <StyledNavBackground>
       <StyledNavContents>
-        {!loggedIn && <Link to={`/${LOGIN_ROUTE}`}>Login</Link>}
+          {!loggedIn && <Link to={`/${LOGIN_ROUTE}`}>Login</Link>}
+          {loggedIn && <Link to={`/${DASHBOARD_ROUTE}`}>View My Dashboard</Link>}
       </StyledNavContents>
     </StyledNavBackground>
   );
