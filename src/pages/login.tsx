@@ -41,7 +41,7 @@ const Login: React.FC<{}> = () => {
       <div>
           <input type={'text'} name="username" onChange={(e) => setUsername(e.target.value)}/>
           <input type={'password'} name="password" onChange={(e) => setPassword(e.target.value)}/>
-          <Button disabled={isLoading} onClick={onLogin}>Login NOW!</Button>
+          <Button disabled={isLoading} name="submit" onClick={onLogin}>Login NOW!</Button>
       </div>
   );
 };
